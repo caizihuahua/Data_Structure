@@ -113,3 +113,23 @@ Status ShowList(SqList L){
     }
     return OK;
 }
+
+Status MergeLists(SqList La, SqList Lb, SqList &Lc){
+    int i,j,k;
+    i=j=k=0;
+    InitList(Lc);
+    while(i<La.len && j<Lb.len){
+        if(La.elem[i] > Lb.elem[j]){
+            ListInsert(Lc,++k,Lb.elem[j++]);
+        }else{
+            ListInsert(Lc,++k,La.elem[i++]);
+        }
+    }
+    while(i<La.len){
+        ListInsert(Lc,++k,La.elem[i++]);
+    }
+    while(j<Lb.len){
+        ListInsert(Lc,++k,Lb.elem[j++]);
+    }
+    return OK;
+}

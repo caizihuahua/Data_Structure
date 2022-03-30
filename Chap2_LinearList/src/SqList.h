@@ -37,3 +37,5 @@ Status ListDelete(SqList &L, int i, int &e);
 Status ListTraverse(SqList &L, void(*visit)(int e));
 
 Status ShowList(SqList L);
+
+Status MergeLists(SqList La, SqList Lb, SqList &Lc);
